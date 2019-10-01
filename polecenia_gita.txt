@@ -40,3 +40,18 @@ git diff - pokazuje zmieny denego pliku w koncoli
 git config --global diff.tool winmergage - inicjuje otwieranie podglądu zmian w aplikacji winmerge
 git difftool - pokazuje zmiany we wprowadzonym wcześniej programi domyślnym
 
+git branch – my_new_branch – tworzy nową gałąź 
+git branch – pokazuje listę gałęzi 
+git brach –d nazwagałęzi – kasuje gałąź 
+
+git checkout - przejście na dany tag 
+git checkout - przejście na dany commit 
+git checkout - przejście na... commit podany w dowolny sposób (np. git checkout master~4)
+
+git checkout - - przeniesienie na poprzednią brach 
+git checkout master – przejscie na mastera 
+
+git show head - pokazuje head - czyli ostani commit na danej branchy
+git show(HEAD) - pokazuje HEAD - czyli aktualny commit?
+git branch -m new_name - zmiana nazwy gałęzi
+git push origin master - wysyła wszystko do zdalnego repo
