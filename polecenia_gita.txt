@@ -32,5 +32,11 @@ git rm nazwa - usuwa podany plik z repozytorium - jest odwracalna
 git brunch - pokazuje istniejące gałęzie
 git branch -v - pokazuej ostanie rewizje galęzi
 
-
+git init - tworzy lokalne repo gita
+mkdir nazwa folderu 
+cd nazwa folderu
+git config core.editor notepade - ustawia edytor teksty jako notepad
+git diff - pokazuje zmieny denego pliku w koncoli
+git config --global diff.tool winmergage - inicjuje otwieranie podglądu zmian w aplikacji winmerge
+git difftool - pokazuje zmiany we wprowadzonym wcześniej programi domyślnym
 
