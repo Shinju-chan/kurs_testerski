@@ -29,6 +29,8 @@ git clean -nd - lista plików także z domyślnymi
 git clean idf - otwiera "menu wyrzucania plików"
 git reset - usuwa plik z kolejnki oczekiwania
 git rm nazwa - usuwa podany plik z repozytorium - jest odwracalna
+git brunch - pokazuje istniejące gałęzie
+git branch -v - pokazuej ostanie rewizje galęzi
 
 
 
