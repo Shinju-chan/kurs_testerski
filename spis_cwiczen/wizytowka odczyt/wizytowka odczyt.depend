@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1563557642 source:c:\users\shinju\documents\cody\wizytowka odczyt\main.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1564084796 source:c:\users\shinju\documents\cody\wskaüniki\main.cpp
+	<iostream>
+	<time.h>
+	<cstdlib>
+
