@@ -1,57 +1,112 @@
-git clone /path/to/repository - tworzy kopię roboczą repo
-git clone username@host:/path/to/repository - w przypadku zdalnego serwera
-git add nazwa - dodaje plik do poczekalni 
-git commit -m - dodaje plik do repo (z poczekalni) z komentarzem w historii
-git push origin master - wypycha zmiany na serwer zdalny (master można zmienić na dowolną gałąź)
-git remote add origin <server> - wysyła pliki na wskazany serwer
-git checkout -b nazwa - tworzy gałąź o podanej nazwie i przełanacza na nią
-git checkout master - przełanacza na gałąź mastera (lub inną w zalezności od nazwy, którą się wpisze)
-git branch -d nazwa - usuwa gałąź o podanej nazwie
-git push origin <branch> - wypycha daną gałąź do repo zdalnego
-git pull - aktualizuje repo lokalna do ostatniego comita
-git merge <branch> - scala podaną gałąź z gałęzią aktywną
-git diff <source_branch> <target_branch> - pokazuje wybrane gałęzie przed scaleniem
-git tag 1.0.0 XXXXXXXXXX - tworzy tag o nazwie 1.0.0 przypisany do comita o numerze XXXXXXXXX
-git log - pokazuje historię w najprostrzej formie
-git log --author=wojciech - pokazuje historię zmiena wprowadzoną przez podanego autora
-git log --pretty=oneline - pokazuje comita w jednej lini
-git log --name-status - pokazuje jakie pliki zostały zmienione 
-git log --help - pokazuje pomoc związaną z pokazywaniem historii
-git checkout -- nazwa - wycofuje zmiane opodanej nazwie zastepując je w katalogu roboczym ostatnią zawartością z HEAD (poczekalni)
-git fetch origin - porzuca wszystkie lokalne zmiany i wrzuca na gałąź lokalna
-git reset --hard origin/master - jw tylko na lokalnego mastera
-gitk - wbudowane GUI dla gita (pokazuje zmiany w domyślnyminterface) 
-git add . - dodaj wszystkie pliki do kolejki
-git commit - dodaje ostatnie zmieny do repo i otwiera domyślny edytor do wpisania komentarza ręcznie
-git clean - usuwa niesledzone pliki i katalogi
-git clean -n - wyświetal liste plików do wyrzucenia 
-git clean -nd - lista plików także z domyślnymi 
-git clean idf - otwiera "menu wyrzucania plików"
-git reset - usuwa plik z kolejnki oczekiwania
-git rm nazwa - usuwa podany plik z repozytorium - jest odwracalna
-git brunch - pokazuje istniejące gałęzie
-git branch -v - pokazuej ostanie rewizje galęzi
+Dotyczące konfiguracji
+    • git config core.editor notepade - ustawia edytor teksty jako notepad do pisania commitów
+    • git config --global diff.tool winmergage - inicjuje otwieranie podglądu zmian w aplikacji winmerge
 
-git init - tworzy lokalne repo gita
-mkdir nazwa folderu 
-cd nazwa folderu
-git config core.editor notepade - ustawia edytor teksty jako notepad
-git diff - pokazuje zmieny denego pliku w koncoli
-git config --global diff.tool winmergage - inicjuje otwieranie podglądu zmian w aplikacji winmerge
-git difftool - pokazuje zmiany we wprowadzonym wcześniej programi domyślnym
+Związane z operacjami na repo
+    • git clone /path/to/repository - tworzy kopię roboczą repo
+    • git clone username@host:/path/to/repository - w przypadku zdalnego serwera
+    • git push origin master - wypycha zmiany na serwer zdalny (master można zmienić na dowolną gałąź)
+    • git remote add origin <server> - wysyła pliki na wskazany serwer
+    • git pull - aktualizuje repo lokalna do ostatniego comita
 
-git branch – my_new_branch – tworzy nową gałąź 
-git branch – pokazuje listę gałęzi 
-git brach –d nazwagałęzi – kasuje gałąź 
+Podstawowe/ ważne komendy
+    • git init - tworzy lokalne repo gita
+    • git add nazwa - dodaje plik do poczekalni 
+    • git commit -m - dodaje plik do repo (z poczekalni) z komentarzem w historii
+    • gitk - wbudowane GUI dla gita (pokazuje zmiany w domyślnym interfejsie) 
+    • git add . - dodaj wszystkie pliki do kolejki
+    • git commit - dodaje ostatnie zmiany do repo i otwiera domyślny edytor do wpisania komentarza ręcznie
+    • echo „xyz” *.txt – zapisz ten ciąg znaków (xyz) w pliku o podanej nazwie (*.txt)
 
-git checkout - przejście na dany tag 
-git checkout - przejście na dany commit 
-git checkout - przejście na... commit podany w dowolny sposób (np. git checkout master~4)
+Przydatne (triki)
+    • clear – czyście ekran
+    • git stash – przenosi zmiany na stos (do kolejki)
+    • git stash pop – przywraca zmiany odłożone na stos (przydatne gdy nieograneło się na której jesteśmy gałęzi)
+    • git stash push -m „”  – przenosi na stos z możliwością dodania komentarza jak w przypadku ckommitowania
+    • git stash list – podgląd zmian stosowych
+    • git stash apply <> - przywraca zmiany do katalogu roboczego i pozostawia je na stosie
+    • git stash pop <> – przywraca zmiany do katalogu roboczego i usuwa ze stosu
+    • git stach pop – jw domyślnie ostanie zmiany
+    • git stach branch nazwagałezi – tworzy nową gałąź o podanej nazwie i przełącza na nią ze zmian na stosie 
+      
+Zmiany:
+    • git checout (nr commitu) – przywraca zmiany związane z konkretnym commitem – tryb odłączonej głowy – nie zapisuje zmian dopóki nie zostanie to zakomitowane
+    • git checkout -b (nazwa gałęzi) -gdy chcemy zapisać zmiany na konkretnej gałęzi
+    • git checkout master – przywraca zmiany (albo przytłacza na gałąź mastera)git checout (nr commitu) (ścieżka do pliku) usuwa zmiany w konkretnym pliku z konkretnego Commita 
+    • git revert – odwrócenie zmień z danego komitu i zakomitowanie ich (nie usuwa zmian)
+    • git reset – przywraca zmiany do wskazanego punktu w historii (zmienia historię)
+    • git reset – mixed – zmiany które wprowadziliśmy do momentu comita do którego się cofany zostaną wprowadzone do katalogu roboczego (reszta usunięta)
+    • git reset – soft – zmianny dodane do kolejki
+    • git reste –hard – zmiany zostają całkowicie usunięte (comity)
+    • git fetch origin - porzuca wszystkie lokalne zmiany i wrzuca na gałąź lokalna
+    • git reset --hard origin/master - jw tylko na lokalnego mastera
 
-git checkout - - przeniesienie na poprzednią brach 
-git checkout master – przejscie na mastera 
+Gałęzie
+    • git checkout -b nazwa - tworzy gałąź o podanej nazwie i przełącza na nią
+    • git checkout master - przełącza na gałąź mastera (lub inną w zależności od nazwy, którą się wpisze)
+    • git branch -d nazwa - usuwa gałąź o podanej nazwie
+    • git push origin <nazwag> - wypycha daną gałąź do repo zdalnego
+    • git merge <nazwag> - scala podaną gałąź z gałęzią aktywną
+    • git diff <source_branch> <target_branch> - pokazuje wybrane gałęzie przed scaleniem
+    • git brunch - pokazuje istniejące gałęzie
+    • git branch -v - pokazuje ostanie rewizje gałęzi
+    • git branch – nazwanowejgałęzi – tworzy nową gałąź 
+    • git branch – pokazuje listę gałęzi 
+    • git brach –d nazwagałęzi – kasuje gałąź o podanej nazwie
+    • git branch -m new_name - zmiana nazwy gałęzi
+      
+Przeglądanie historii:
+    • git log - pokazuje historię w najprostszej formie
+    • git log online -skondensowana historia (nr commita + komentarz)
+    • git log --author=nazwaautora - pokazuje historię zmienia wprowadzoną przez podanego autora
+    • git log --grep=słowo – wyszukiwanie konkretnej frazy w komentarzach commitów 
+    • git log –online -3 – pokazuje 3 ostanie commity
+    • git log –online – ścieżkapliku/ – pokazuje zmiany zw. Z konkretnym plikiem z podanej ścieżki
+    • git log --online – patch --nazwapliku/ – pokazuje co zostało konkretnie zmiecione w podanym pliku 
+    • git log –online –symary – nazwapliku/ – alternatywa do powyższego – wersja skondensowana
+    • git log –online – stat – nazwapliku/ -  j.w
+    • git log --help - pokazuje pomoc związaną z pokazywaniem historii
+    • git shortlog – historia zmian z podziałem na użytkowników
 
-git show head - pokazuje head - czyli ostani commit na danej branchy
-git show(HEAD) - pokazuje HEAD - czyli aktualny commit?
-git branch -m new_name - zmiana nazwy gałęzi
-git push origin master - wysyła wszystko do zdalnego repo
+Tagi
+    • git tag 1.0.0 X - tworzy tag o nazwie 1.0.0 przypisany do comita o numerze X (10 znaków)
+    • git show v1.0 – pokazuje tag v1.0 (w wersji bieżącej projektu v1.0)
+    • git tag -d v1.0 – usuwa tag o nazwie v1.0
+    • git tag v1.0 -a -m „kom” - tworzy tag v1.0 z informacją o autorze i komentarzem „kom”
+    • git tag v1.0 X -a -m „kom” - tworzy tag bezpośrednio przy commicie X (10znaków) z autorem i komentarzem
+    • git push –tag – wysyła taga do repo zdalengo
+
+Czyszczenie 
+    • git clean - usuwa nieśledzone pliki i katalogi
+    • git clean -n - wyświetla listę plików do wyrzucenia 
+    • git clean -nd - lista plików także z domyślnymi 
+    • git clean idf - otwiera "menu wyrzucania plików"
+    • git rm nazwa - usuwa podany plik z repozytorium - jest odwracalna
+    • git reset - usuwa plik z klejonki oczekiwania
+
+Śledzenie i podglądanie zmian
+    • git checkout - przejście na dany tag 
+    • git checkout - przejście na dany commit 
+    • git checkout - przejście na... commit podany w dowolny sposób (np. git checkout master~4)
+    • git checkout - - przeniesienie na poprzednią brach 
+    • git checkout master – przejście na mastera 
+    • git diff - pokazuje zmiany danego pliku w konsoli
+    • git difftool - pokazuje zmiany we wprowadzonym wcześniej programie domyślnym
+    • git show head - pokazuje head - czyli ostatni commit na danej branchy
+    • git show(HEAD) - pokazuje HEAD - czyli aktualny commit ogólnie na drzewie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
